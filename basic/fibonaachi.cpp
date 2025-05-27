@@ -1,13 +1,14 @@
 // a series of numbers where each number is the sum of the two preceding numbers
 #include <iostream>
 
-int fibSeq(int a, int b)
+int fibSeq(int n)
 {
-    if(a>=b)
+    if(n==0)
         return 0;
+    else if (n==1)
+        return 1;
     
-    a++;
-    return (fibSeq(a,b-1)+fibSeq(a,b-2));
+    return fibSeq(n-1)+fibSeq(n-2);
 }
 
 int main()
@@ -15,5 +16,5 @@ int main()
     int inp; 
     std::cin>>inp;
 
-    std::cout<<fibSeq(0,inp);
+    std::cout<<fibSeq(inp);
 }
